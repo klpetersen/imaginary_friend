@@ -2,9 +2,18 @@ class UsersController < ApplicationController
 
 
     def welcome
-        render :welcome
+        #implicitly renders welcome
     end
-
+    
+    def show
+        current_user = User.find_by(session[:user_id])
+        @user = User.find_by(id: params[:id])
+        if current_user && current_user == @user
+            render :show
+        else
+            redirect_to login_path
+        end
+    end
 
     def create
         @user = User.create(user_params)

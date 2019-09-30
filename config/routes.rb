@@ -4,5 +4,9 @@ Rails.application.routes.draw do
   get '/quizzes', to: 'quizzes#show'
 
   root to: 'users#welcome'
-
+  get '/login', to: 'sessions#new', as: :login
+  post '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy'
+  #post '/login', to: 'sessions#authenticate'
+  resources :users, only: [:create, :new, :show]
 end
