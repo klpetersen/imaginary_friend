@@ -1,6 +1,4 @@
 
-<%= link_to 'Login!', '/login' %><br>
-<%= link_to 'Create User', new_user_path %>
         
         </section><section class="engine"><a rel="external" href="https://mobirise.com">Mobirise</a></section></div>
         
@@ -25,13 +23,14 @@
                                     </div>
         
                                     <div class="mbr-section-btn">
-                                        <a class="btn btn-black" href="https://mobirise.com">LOGIN</a> 
-                                        <a class="btn btn-black" href="https://mobirise.com">CREATE ACCOUNT</a> 
+                                        <%= link_to 'LOGIN', '/login', :class => "btn btn-black" %>
+                                        <%= link_to 'CREATE ACCOUNT', new_user_path, :class => "btn btn-black" %>
                                     </div>
         
                                 </div>
                                 <div class="mbr-table-cell mbr-valign-top mbr-left-padding-md-up col-md-7 image-size" style="width: 50%;">
-                                    <div class="mbr-figure"><img src="https://p7.hiclipart.com/preview/290/475/651/happy-birthday-cookie-monster-elmo-biscuits-clip-art-eating-cookies-cliparts.jpg"></div>
+                                <%= image_tag ("/assets/cookie.png"), class: "mbr-figure"%>
+
                                 </div>
         
                             </div>
