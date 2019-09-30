@@ -3,4 +3,6 @@ Rails.application.routes.draw do
 
   get '/quizzes', to: 'quizzes#show'
 
+  root to: 'users#welcome'
+
 end

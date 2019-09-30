@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
 
 
+    def welcome
+        render :welcome
+    end
+
+
     def create
         @user = User.create(user_params)
     end
