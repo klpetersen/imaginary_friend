@@ -1,19 +1,11 @@
 class UsersController < ApplicationController
-
-
+skip_before_action :authenticate, only: :welcome
     def welcome
         #implicitly renders welcome
     end
     
     def show
-        @user = User.find_by(id: session[:user_id])
-        render :show
-        # @user = User.find_by(id: params[:id])
-        # if current_user && current_user == @user
-        #     render :show
-        # else
-        #     redirect_to login_path
-        # end
+      
     end
 
     def create
