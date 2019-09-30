@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-
+skip_before_action :authenticate, only: [:new, :create]
     def new
         #implicitly renders new / login
     end
@@ -28,5 +28,9 @@ class SessionsController < ApplicationController
         end
     end 
 
+    def destroy
+        session.delete(:user_id)
+        redirect_to '/'
+    end
 
 end
