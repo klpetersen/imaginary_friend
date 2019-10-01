@@ -1,6 +1,5 @@
 class User < ApplicationRecord
-    belongs_to :quiz 
-
+    has_many :friendships
     validates :password, confirmation: { case_sensitive: true }
     
     has_secure_password 
