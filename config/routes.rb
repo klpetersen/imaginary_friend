@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   root to: 'users#welcome'
   get '/login', to: 'sessions#new', as: :login
   post '/login', to: 'sessions#create'
-  #get '/logout', to: 'sessions#destroy', as: :logout
-  #post '/login', to: 'sessions#authenticate'
-  resources :users, only: [:new, :create, :show]
+  get '/logout', to: 'sessions#destroy', as: :logout
+  resources :users, only: [:new, :create, :show, :edit, :update]
 end
