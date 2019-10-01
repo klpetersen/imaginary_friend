@@ -1,14 +1,43 @@
-<% if flash[:error] %>
-<p><%= flash[:error] %></p>
-<% end %>
+<section class="mbr-section mbr-section-hero mbr-section-full" id="login-page">
+    <div class="form-container">
+        <div>
+            <% if flash[:error] %>
+                <p><%= flash[:error] %></p>
+            <% end %>
+            
+            
+            <%= form_tag login_path do %><br>
+            <%= label_tag(:for, 'email') %><br>
+            <%= text_field_tag :'user[:email]'%><br><br> 
+            <%= label_tag(:for, 'password') %><br> 
+            <%= password_field_tag :'user[:password]'%><br> 
+            <%= submit_tag 'Login, friend!'%><br> 
+            
+            <% end %>
+        </div>
+    </div>
+</section>
+        
+
+    <!-- <div class="mbr-table-cell mbr-valign-top mbr-left-padding-md-up col-md-7 image-size" style="width: 50%;">
+    <%= image_tag ("/assets/cookie.png"), class: "mbr-figure"%>
+
+    </div> -->
 
 
-<%= form_tag login_path do %>
-<%= label_tag(:for, 'email') %>
-<%= text_field_tag :'user[:email]'%>
-<%= label_tag(:for, 'password') %>
-<%= password_field_tag :'user[:password]'%>
-<%= submit_tag 'Login, friend!'%>
-
-
-<% end %>
+      <!-- <div class="mbr-section-btn">
+            <% if flash[:error] %>
+            <p><%= flash[:error] %></p>
+            <% end %>
+            
+            
+            <%= form_tag login_path do %><br>
+            <%= label_tag(:for, 'email') %><br>
+            <%= text_field_tag :'user[:email]'%><br><br> 
+            <%= label_tag(:for, 'password') %><br> 
+            <%= password_field_tag :'user[:password]'%><br> 
+            <%= submit_tag 'Login, friend!'%><br> 
+            
+            
+            <% end %>
+    </div> -->
