@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2019_09_26_191309) do
 
   create_table "buddies", force: :cascade do |t|
     t.string "name"
-    t.string "img_url"
+    t.integer "img_num"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
