@@ -10,11 +10,13 @@ class UsersController < ApplicationController
     end
 
     def create
-        # create new user
-        # add and error handling validations later
-        @user = User.create(user_params)
-        #session[:user_id] = @user.id
-        redirect_to user_path(@user)
+        @user = User.new(user_params)
+        if @user.valid?
+            @user.save
+            redirect_to user_path(@user)
+        else
+            render :new
+        end
     end
 
     def new

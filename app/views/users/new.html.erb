@@ -1,6 +1,20 @@
 <section class="mbr-section mbr-section-hero mbr-section-full" id="create-page">
         <div class="create-container">
             <div>
+             <% if flash[:error] %>
+                <p><%= flash[:error] %></p>
+            <% end %>
+            <% if @user.errors.any? %>
+                <div id="error_explanation">
+                <h4>Whoops! Looks like something you entered wasn't quite right...</h4>
+                 <ul>
+                    <% @user.errors.full_messages.each do |msg| %>
+                     <li><%= msg %></li>
+                    <% end %>
+                 </ul>
+                </div>
+                <% end %>
+            
                 <%= form_for :user, method: 'post', url: '/users' do |f| %>
                 <b>Name: <br><%= f.text_field :name %><br><br>  
                 Username: <br><%= f.text_field :user_name %><br><br>  

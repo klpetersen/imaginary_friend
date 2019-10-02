@@ -13,13 +13,13 @@ class SessionsController < ApplicationController
         session[:user_id] = @user.id
         redirect_to user_path(@user)
       else
-        flash[:error] = "Invalid"
+        flash[:error] = "Sorry, bud! That login was invalid"
         redirect_to login_path
       end
     end
   
     def destroy
-      session.delete(:user_id) # session[:user_id] = nil
+      session.delete(:user_id) 
       redirect_to '/'
     end
 
