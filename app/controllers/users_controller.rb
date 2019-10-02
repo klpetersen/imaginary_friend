@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     end
     
     def show
+        byebug
         @user = User.find(params[:id])
     end
 
@@ -12,7 +13,7 @@ class UsersController < ApplicationController
         # create new user
         # add and error handling validations later
         @user = User.create(user_params)
-        session[:user_id] = @user.id
+        #session[:user_id] = @user.id
         redirect_to user_path(@user)
     end
 

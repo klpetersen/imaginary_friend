@@ -14,6 +14,7 @@ before_action :authenticate
   def authenticate
     if logged_in?
       current_user
+      byebug
     else
       flash[:error] = "You must be logged in to see that"
       redirect_to login_path
