@@ -1,10 +1,8 @@
 <section class="mbr-section mbr-section-hero mbr-section-full" id="create-page">
         <div class="create-container">
             <div>
-             <% if flash[:error] %>
-                <p><%= flash[:error] %></p>
-            <% end %>
-            <% if @user.errors.any? %>
+            <% if@user %>
+                <% if @user.errors.any? %>
                 <div id="error_explanation">
                 <h4>Whoops! Looks like something you entered wasn't quite right...</h4>
                  <ul>
@@ -13,6 +11,7 @@
                     <% end %>
                  </ul>
                 </div>
+                <% end %>
                 <% end %>
             
                 <%= form_for :user, method: 'post', url: '/users' do |f| %>
