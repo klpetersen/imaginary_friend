@@ -16,7 +16,7 @@ before_action :authenticate
       current_user
       byebug
     else
-      flash[:error] = "You must be logged in to see that"
+      flash[:error] = "Wooooaaahh, slow down there, kiddo! You gotta log in to see that page!"
       redirect_to login_path
     end
   end
