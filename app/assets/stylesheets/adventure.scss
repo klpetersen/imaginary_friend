@@ -1,0 +1,40 @@
+#adventure-show-page { 
+    background-image: url('http://images.ctfassets.net/lufu0clouua1/4vlUi1LZRCc42UygYWQMei/b35f18e851bfb9f20aca2869adfbeaa6/WEB__gourmet-cookies-beauty.jpg'); 
+}
+
+.adventure-container { 
+    display: flex; 
+    justify-content: right;
+    margin-left: 50px; 
+    position: relative; 
+    width: 100%;
+}
+
+.adventure-content { 
+    display: flex;  
+    position: relative; 
+}
+
+.ad-1 { 
+    text-align: center; 
+    width: 200px;
+    height: 200px;
+    background-color: rgba(245, 245, 245, .9); 
+    border-radius: 100%; 
+}
+
+.ad-2 { 
+    text-align: center; 
+    width: 200px;
+    height: 200px;
+    background-color: rgba(245, 245, 245, .9); 
+    border-radius: 100%; 
+}
+
+.ad-3 { 
+    text-align: center; 
+    width: 200px;
+    height: 200px;
+    background-color: rgba(245, 245, 245, .9); 
+    border-radius: 100%; 
+}
