@@ -10,7 +10,14 @@
                 This is item 2
             </div>
             <div class="item-3">
-                This is item 3
+                <!-- if user has friendship, display friend image and adventure button, else display find friend button -->
+                <% if has_friendship? %>
+                    <% @buddy = current_buddy %>
+                <div class="mbr-table-cell mbr-valign-top mbr-left-padding-md-up col-md-7 image-size" style="width: 50%;">
+                    <%= image_tag ("/assets/buddies_imgs/#{@buddy.img_num}.png"), class: "mbr-figure"%>                        </div>
+                <%else%>
+                    <%= link_to 'FIND A FRIEND', '/find_a_friend', :class => "btn btn-black" %>
+                <%end%>
             </div>
         </div>
     </div>
