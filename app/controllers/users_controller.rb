@@ -42,9 +42,9 @@ class UsersController < ApplicationController
         render :show
     end
 
-    # def start_hangout
-    #     @hangout = Hangout.create()
-    # end
+    def hangout
+        redirect_to '/activities'
+    end
 
 
    
