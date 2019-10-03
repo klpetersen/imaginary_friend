@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show, :edit, :update]
   resources :buddies, only: [:show, :index]
   get '/activities/index', to: 'activities#index', as: :adventures
+  get '/hangouts', to: 'hangouts#show'
 end
