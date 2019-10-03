@@ -5,7 +5,6 @@
 .adventure-container { 
     display: flex; 
     justify-content: right;
-    margin-left: 50px; 
     position: relative; 
     width: 100%;
 }
@@ -13,28 +12,34 @@
 .adventure-content { 
     display: flex;  
     position: relative; 
+    margin-top: 100px; 
 }
 
 .ad-1 { 
     text-align: center; 
-    width: 200px;
-    height: 200px;
+    vertical-align: center; 
+    width: 475px;
+    height: 800px;
     background-color: rgba(245, 245, 245, .9); 
-    border-radius: 100%; 
+    margin-right: 50px; 
+    margin-left: 75px; 
+}
+
+.ad-1 h1 { 
+    margin-top:100px; 
 }
 
 .ad-2 { 
     text-align: center; 
-    width: 200px;
-    height: 200px;
+    width: 475px;
+    height: 800px;
     background-color: rgba(245, 245, 245, .9); 
-    border-radius: 100%; 
+    margin-right:50px; 
 }
 
 .ad-3 { 
     text-align: center; 
-    width: 200px;
-    height: 200px;
+    width: 475px;
+    height: 800px;
     background-color: rgba(245, 245, 245, .9); 
-    border-radius: 100%; 
 }
