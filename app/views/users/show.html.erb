@@ -1,3 +1,4 @@
+<link href="https://fonts.googleapis.com/css?family=Titan+One&display=swap" rel="stylesheet">
 <section class="mbr-section mbr-section-hero mbr-section-full" id="user-show-page">
     <div class="profile-container">
         <div class="profile-content-user">
@@ -16,8 +17,10 @@
                     <br>Email: <%= @user.email %><br>
                     <% if has_friendship? %>
                     <br><% @buddy = current_buddy %>
-                    Your Friend: <br>
-                    <br><%= @buddy.name %>  
+                    <br>Your Friend: <br>
+                    <div id="name-font">
+                        <br><%= @buddy.name %>  
+                    </div>
                     <% end %></h2>
                 </div>
             </div>
