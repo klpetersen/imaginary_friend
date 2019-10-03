@@ -15,12 +15,12 @@
                 <% end %>
             
                 <%= form_for :user, method: 'post', url: '/users' do |f| %>
-                <b>Name: <br><%= f.text_field :name %><br><br>  
-                Username: <br><%= f.text_field :user_name %><br><br>  
-                Email: <br> <%= f.text_field :email %><br><br>  
-                Password:<br><%= f.password_field :password %><br><br>  
-                Password Confirmation: <br><%= f.password_field :password_confirmation %><br><br>  
-                <%= f.submit "Create that account, Champ!" %>
+                <b>Name <br><%= f.text_field :name %><br><br>  
+                Username <br><%= f.text_field :user_name %><br><br>  
+                Email <br> <%= f.text_field :email %><br><br>  
+                Password<br><%= f.password_field :password %><br><br>  
+                Password Confirmation <br><%= f.password_field :password_confirmation %><br><br>  
+                <%= f.submit "Create that account, champ!", :class => "btn btn-black" %>
                 <% end %></b>
             </div>
         </div>
