@@ -1,2 +1,5 @@
 class HangoutsController < ApplicationController
+
+    
+
 end
