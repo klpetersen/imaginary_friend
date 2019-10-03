@@ -31,9 +31,10 @@
                     <div class="friend-picture">
                         <%= image_tag ("/assets/buddies_imgs/#{@buddy.img_num}.png"), class: "mbr-figure"%>                
                     </div>
+
                     <div class="friend-buttons">
                         <%= link_to 'GO ON AN ADVENTURE!', '/activities/index', :class => "btn btn-black" %><br><br> 
-                        <br><%= link_to 'LEAVE YOUR FRIEND 😥', 'leave_friendship', :class => "btn btn-black" %>
+                        <br><%= link_to 'LEAVE YOUR FRIEND 😥', end_friendship_path, :class => "btn btn-black" %>
                         <%else%>
                         <%= link_to 'FIND A FRIEND', '/find_a_friend', :class => "btn btn-black" %>
                 <%end%>
