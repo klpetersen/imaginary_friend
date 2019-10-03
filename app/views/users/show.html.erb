@@ -2,31 +2,39 @@
     <div class="profile-container">
         <div class="profile-content-user">
             <div class="item-1">
-                <%= image_tag ("/assets/cookie.png"), class: "mbr-figure"%>
+                <div class="monster-content">
+                    <%= image_tag ("/assets/cookie.png"), class: "mbr-figure"%>
+                </div>
+                 <div class="monster-button">
+                    <%= link_to 'LOGOUT', logout_path, :class => "btn btn-black" %>
+                </div>
             </div>
             <div class="item-2">
-            <h1><%= @user.name %> </h1>
-                <h2>Username: <%= @user.user_name %><br>
-                Email: <%= @user.email %><br></h2>
-                <% if has_friendship? %>
-                    <% @buddy = current_buddy %>
+                <div class="item-2-content">
+                    <h1>Welcome <%= @user.name %>!</h1><br> 
+                    <h2>Username: <%= @user.user_name %><br>
+                    <br>Email: <%= @user.email %><br>
+                    <% if has_friendship? %>
+                    <br><% @buddy = current_buddy %>
                     Your Friend: <br>
-                    <%= @buddy.name %>  
-                <% end %>
+                    <br><%= @buddy.name %>  
+                    <% end %></h2>
+                </div>
             </div>
             <div class="item-3">
                 <!-- if user has friendship, display friend image and adventure button, else display find friend button -->
                 <% if has_friendship? %>
                     <% @buddy = current_buddy %>
-                    <div class="mbr-table-cell mbr-valign-top mbr-left-padding-md-up col-md-7 image-size" style="width: 50%;">
-                    <%= image_tag ("/assets/buddies_imgs/#{@buddy.img_num}.png"), class: "mbr-figure"%> 
-                                         
+                    <div class="friend-picture">
+                        <%= image_tag ("/assets/buddies_imgs/#{@buddy.img_num}.png"), class: "mbr-figure"%>                
                     </div>
-                    <%= link_to 'GO ON AN ADVENTURE!', '/activities/index', :class => "btn btn-black" %>
-                    <%= link_to 'LEAVE YOUR FRIEND 😥', 'leave_friendship', :class => "btn btn-black" %>
-                <%else%>
-                    <%= link_to 'FIND A FRIEND', '/find_a_friend', :class => "btn btn-black" %>
+                    <div class="friend-buttons">
+                        <%= link_to 'GO ON AN ADVENTURE!', '/activities/index', :class => "btn btn-black" %><br><br> 
+                        <br><%= link_to 'LEAVE YOUR FRIEND 😥', 'leave_friendship', :class => "btn btn-black" %>
+                        <%else%>
+                        <%= link_to 'FIND A FRIEND', '/find_a_friend', :class => "btn btn-black" %>
                 <%end%>
+                    </div>
             </div>
         </div>
     </div>
