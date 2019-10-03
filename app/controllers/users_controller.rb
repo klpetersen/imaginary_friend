@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     end
     
     def show
-        @user = User.find(params[:id])
+        @user = User.find_by(id: params[:id])||@user = User.find_by(id: session[:user_id])
     end
 
     def create
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
     end
     
     def end_friendship
-        @user.friendships.destroy
+        Friendship.all.find_by(user_id: @user.id).destroy
         render :show
     end
 
