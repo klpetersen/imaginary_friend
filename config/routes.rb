@@ -13,8 +13,6 @@ Rails.application.routes.draw do
 
   resources :buddies, only: [:show, :index]
 
-  get '/activities/index', to: 'activities#index', as: :adventures
-
-  get '/hangouts', to: 'hangouts#show'
+  get '/activities', to: 'activities#index', as: :adventures
 
 end
