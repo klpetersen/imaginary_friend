@@ -4,9 +4,7 @@ class CreateFriendships < ActiveRecord::Migration[6.0]
       t.integer :user_id
       t.integer :buddy_id
       t.integer :hangout_id
-      t.integer :success_points
-      t.integer :fail_points
-
+      t.integer :friendship_rank
       t.timestamps
     end
   end

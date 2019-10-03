@@ -33,7 +33,7 @@ class UsersController < ApplicationController
 
     def find_a_friend
         @buddy = Buddy.all.sample 
-        Friendship.create(user_id: @user.id, buddy_id: @buddy.id)
+        Friendship.create(user_id: @user.id, buddy_id: @buddy.id, friendship_rank: 0)
         render :show
     end
     
