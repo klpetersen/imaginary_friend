@@ -14,9 +14,11 @@
                 <% if has_friendship? %>
                     <% @buddy = current_buddy %>
                     <div class="mbr-table-cell mbr-valign-top mbr-left-padding-md-up col-md-7 image-size" style="width: 50%;">
-                    <%= image_tag ("/assets/buddies_imgs/#{@buddy.img_num}.png"), class: "mbr-figure"%>                        
+                    <%= image_tag ("/assets/buddies_imgs/#{@buddy.img_num}.png"), class: "mbr-figure"%> 
+                    <%= @buddy.name %>                       
                     </div>
-                    <%= link_to 'GO ON AN ADVENTURE!', '', :class => "btn btn-black" %>
+                    <%= link_to 'GO ON AN ADVENTURE!', '/activities/index', :class => "btn btn-black" %>
+                    <%= link_to 'LEAVE YOUR FRIEND 😥', 'leave_friendship', :class => "btn btn-black" %>
                 <%else%>
                     <%= link_to 'FIND A FRIEND', '/find_a_friend', :class => "btn btn-black" %>
                 <%end%>

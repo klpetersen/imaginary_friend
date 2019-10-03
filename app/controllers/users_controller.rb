@@ -36,9 +36,9 @@ class UsersController < ApplicationController
         Friendship.create(user_id: @user.id, buddy_id: @buddy.id)
         render :show
     end
-
+    
     def end_friendship
-        Friendship.all.find_by(user_id: @user.id).destroy
+        @user.friendships.destroy
         render :show
     end
 
