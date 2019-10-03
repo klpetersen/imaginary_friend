@@ -10,45 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_26_191309) do
-
-  create_table "activities", force: :cascade do |t|
-    t.string "name"
-    t.string "type"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "buddies", force: :cascade do |t|
-    t.string "name"
-    t.integer "img_num"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "friendships", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "buddy_id"
-    t.integer "hangout_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "hangouts", force: :cascade do |t|
-    t.integer "friendship_id"
-    t.integer "activity_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "user_name"
-    t.string "password_digest"
-    t.string "email"
-    t.string "name"
-    t.string "img_url"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+ActiveRecord::Schema.define(version: 0) do
 
 end
