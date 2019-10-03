@@ -22,6 +22,9 @@ ActiveRecord::Schema.define(version: 2019_09_26_191309) do
   create_table "buddies", force: :cascade do |t|
     t.string "name"
     t.integer "img_num"
+    t.string "w_prefs"
+    t.string "s_prefs"
+    t.string "f_prefs"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -30,6 +33,8 @@ ActiveRecord::Schema.define(version: 2019_09_26_191309) do
     t.integer "user_id"
     t.integer "buddy_id"
     t.integer "hangout_id"
+    t.integer "success_points"
+    t.integer "fail_points"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
