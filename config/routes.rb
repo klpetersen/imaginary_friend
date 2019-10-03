@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   get '/find_a_friend', to: 'users#find_a_friend', as: :find_a_friend
   resources :users, only: [:new, :create, :show, :edit, :update]
   resources :buddies, only: [:show, :index]
+  get '/activities/index', to: 'activities#index', as: :adventures
   get '/hangouts', to: 'hangouts#show'
 end

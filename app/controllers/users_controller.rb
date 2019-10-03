@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     end
 
     def new
-
+        render :new
     end
 
     def has_friendship?
@@ -36,6 +36,16 @@ class UsersController < ApplicationController
         Friendship.create(user_id: @user.id, buddy_id: @buddy.id)
         render :show
     end
+
+    def end_friendship
+        Friendship.all.find_by(user_id: @user.id).destroy
+        render :show
+    end
+
+    # def start_hangout
+    #     @hangout = Hangout.create()
+    # end
+
 
    
 
