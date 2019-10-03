@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show, :edit, :update]
   get '/find_a_friend', to: 'users#find_a_friend', as: :find_a_friend
   get 'leave_friendship', to: 'users#end_friendship', as: :end_friendship
-  get '/activities', to: 'users#hangout', as: :activities_path
+  get '/activities', to: 'activities#index', as: :adventures
   resources :activities, only: [:index]
 
 
