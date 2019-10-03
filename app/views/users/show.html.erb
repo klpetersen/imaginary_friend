@@ -33,10 +33,10 @@
                     </div>
 
                     <div class="friend-buttons">
-                        <%= link_to 'GO ON AN ADVENTURE!', '/activities/index', :class => "btn btn-black" %><br><br> 
+                        <%= link_to 'GO ON AN ADVENTURE!', activities_path, :class => "btn btn-black" %><br><br> 
                         <br><%= link_to 'LEAVE YOUR FRIEND 😥', end_friendship_path, :class => "btn btn-black" %>
                         <%else%>
-                        <%= link_to 'FIND A FRIEND', '/find_a_friend', :class => "btn btn-black" %>
+                        <%= link_to 'FIND A FRIEND', find_a_friend_path, :class => "btn btn-black" %>
                 <%end%>
                     </div>
             </div>
