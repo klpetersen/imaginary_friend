@@ -21,6 +21,7 @@
                     <div id="name-font">
                         <br><%= @buddy.name %>  
                     </div>
+                    <br>Friend Rank: <%= Friendship.all.find_by(user_id: @user.id).friendship_rank %> <br>
                     <% end %></h2>
                 </div>
             </div>
