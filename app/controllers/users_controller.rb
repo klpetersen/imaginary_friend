@@ -33,7 +33,7 @@ class UsersController < ApplicationController
 
     def find_a_friend
         @buddy = Buddy.all.sample 
-        Friendship.create(user_id: @user.id, buddy_id: @buddy.id, friendship_rank: 0)
+        Friendship.create(user_id: @user.id, buddy_id: @buddy.id, friendship_rank: 3, adventures: "")
         render :show
     end
     
@@ -41,11 +41,6 @@ class UsersController < ApplicationController
         Friendship.all.find_by(user_id: @user.id).destroy
         render :show
     end
-
-   
-
-
-   
 
     private
     def user_params

@@ -14,9 +14,12 @@ class HangoutsController < ApplicationController
        @activity.id
     end
 
-    def create_hangout(activity_id)
+    def find_friendship
         @user = User.find_by(id: session[:user_id])
-        @friendship = Friendship.all.find_by(user_id: @user.id)
+        @friendship = Friendship.all.find_by(user_id: @user.id) # can probably just call session[:user_id] here instead of creating @user
+    end
+
+    def create_hangout(activity_id)
         @hangout = Hangout.create(activity_id: activity_id, friendship_id: @friendship.id)
     end
 
@@ -33,11 +36,14 @@ class HangoutsController < ApplicationController
     def adjust_rank(result)
         new_rank = result == true ? @friendship.friendship_rank += 1 : @friendship.friendship_rank -= 1
         @friendship.update(friendship_rank: new_rank)
-        win_lose_check
+    end
+
+    def log_adventure(pref_value)
+        new_adventures = @friendship.adventures += pref_value.to_s
+        @friendship.update(adventures: new_adventures)
     end
 
     def win_lose_check
-        #change starting friendship rank
         if @friendship.friendship_rank <= 0
             redirect_to end_friendship_path
         else
@@ -45,11 +51,23 @@ class HangoutsController < ApplicationController
         end
     end
 
-    def find_and_compare(pref_value)
-        activity_id = find_activity_id(pref_value)
-        create_hangout(activity_id)
-        result = is_pref?(pref_value)
-        adjust_rank(result)
+    def adventure_available?(pref_value)
+        !@friendship.adventures.include?(pref_value.to_s)
+    end
+
+    def find_and_compare(pref_value) # also since all these methods will be encapsulated, probably don't need to pass in these values beyond the first pref_value
+        find_friendship 
+        if adventure_available?(pref_value)
+            activity_id = find_activity_id(pref_value)
+            create_hangout(activity_id)
+            result = is_pref?(pref_value)
+            adjust_rank(result)
+            log_adventure(pref_value)
+            win_lose_check
+        else
+            redirect_to activities_path
+        end
+        
     end
 
     def lift_weights
