@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2019_10_03_211443) do
     t.integer "buddy_id"
     t.integer "hangout_id"
     t.integer "friendship_rank"
+    t.string "adventures"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
