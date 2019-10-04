@@ -33,6 +33,16 @@ class HangoutsController < ApplicationController
     def adjust_rank(result)
         new_rank = result == true ? @friendship.friendship_rank += 1 : @friendship.friendship_rank -= 1
         @friendship.update(friendship_rank: new_rank)
+        win_lose_check
+    end
+
+    def win_lose_check
+        #change starting friendship rank
+        if @friendship.friendship_rank <= 0
+            redirect_to end_friendship_path
+        else
+            redirect_to user_path(@user)
+        end
     end
 
     def find_and_compare(pref_value)
@@ -40,7 +50,6 @@ class HangoutsController < ApplicationController
         create_hangout(activity_id)
         result = is_pref?(pref_value)
         adjust_rank(result)
-        redirect_to user_path(@user)
     end
 
     def lift_weights
@@ -60,7 +69,7 @@ class HangoutsController < ApplicationController
     end
 
     def hot_topic
-        find_and_comare(4)
+        find_and_compare(4)
     end
 
     def h_and_m
